@@ -1,5 +1,6 @@
 @use 'hero';
 @use '_var';
+@use 'shows';
 
 @font-face {
     font-family: Avenir;
@@ -17,11 +18,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Avenir, 'sans-serif';
 }
 
 body {
     background-color: var.$bgColor;
-    font-family: Avenir, 'sans-serif';
 }
 
 @mixin text($fontSize: 16px) {
