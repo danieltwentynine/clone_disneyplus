@@ -5,6 +5,7 @@
 @use '_available-devices';
 @use '_faq';
 @use '_footer';
+@use '_header';
 
 @font-face {
     font-family: Avenir;
@@ -72,17 +73,45 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: var.$secColor;
-    background-color: var.$assinarBtn;
-    border: none;
+    background-color: var.$primaryBtn;
     border-radius: 4px;
+    border: 1px solid var.$primaryBtn;
     cursor: pointer;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: lighten(var.$primaryBtn, 3%);
+    }
+
+    &--secondary {
+        background-color: var.$secondaryBtn;
+        border-color: var.$secondaryBtn;
+
+        &:hover {
+            background-color: lighten(var.$secondaryBtn, 3%);
+        }
+    }
+
+    &--dark {
+        background-color: var.$darkBtn;
+        border-color: var.$secColor;
+        transition: all .5s ease;
+
+        &:hover {
+            background-color: var.$secColor;
+            border-color: var.$darkBtn;
+            color: var.$darkBtn;
+        }
+    }
 }
 
 .image-text-section {
